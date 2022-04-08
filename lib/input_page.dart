@@ -105,6 +105,7 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         RoundIconButton(
+                          key: const Key('weight_minus'),
                           icon: FontAwesomeIcons.minus,
                           onPressed: (){
                             setState(() {
@@ -114,6 +115,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                         SizedBox(width: 20,),
                         RoundIconButton(
+                          key: const Key('weight_plus'),
                           icon: FontAwesomeIcons.plus,
                           onPressed: (){
                             setState(() {
@@ -138,6 +140,7 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         RoundIconButton(
+                          key: const Key('age_minus'),
                           icon: FontAwesomeIcons.minus,
                           onPressed: (){
                             setState(() {
@@ -147,6 +150,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                         SizedBox(width: 20,),
                         RoundIconButton(
+                          key: const Key('age_plus'),
                           icon: FontAwesomeIcons.plus,
                           onPressed: (){
                             setState(() {
@@ -193,11 +197,13 @@ class _InputPageState extends State<InputPage> {
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onPressed;
-  RoundIconButton({required this.icon, required this.onPressed});
+  final Key key;
+  RoundIconButton({required this.icon, required this.onPressed, required this.key});
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      
       child: Icon(icon, color: Colors.white,),
       onPressed: onPressed,
       elevation: 6.0,

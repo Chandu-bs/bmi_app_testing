@@ -10,9 +10,6 @@ import '../util/calculator_class.dart';
  void main() {
   
 test("Checking BMI value from the calculator", (){
-
-
-
 //setup
 
 Calculator bmi = Calculator(height: 170, weight: 55);
@@ -59,7 +56,7 @@ String opinion = value.getInterpretation();
 
 
 //test
-expect(opinion, B);
+expect(opinion, C);
 
 });
 
