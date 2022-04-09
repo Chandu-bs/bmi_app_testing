@@ -18,9 +18,9 @@ class _InputPageState extends State<InputPage> {
 
   
   Gender selectedGender = Gender.male;
-  int height = 150;
-  int weight = 50;
-  int age = 15;
+  int height = 160;
+  int weight = 55;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -172,6 +172,7 @@ class _InputPageState extends State<InputPage> {
           ),
           ),
           GestureDetector(
+            key: const Key('Calculate'),
             onTap: (){
               CalculatorBrain calc = CalculatorBrain(height: height,weight: weight);
 
