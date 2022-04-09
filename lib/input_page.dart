@@ -47,7 +47,9 @@ class _InputPageState extends State<InputPage> {
                 onPress: (){
                   setState(() {
                     selectedGender= Gender.female;
+                  
                   });
+                  key: const Key('color_change');
                 },
                 colour: selectedGender== Gender.female? kActiveCardColor:kInactiveCardColor,
                 cardChild: IconContent(icon: FontAwesomeIcons.female, label: 'FEMALE',),)
@@ -78,6 +80,7 @@ class _InputPageState extends State<InputPage> {
                     thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15)
                   ),
                   child: Slider(value: height.toDouble(),
+                    key: const Key('SliderKey'),
                     min: 120,
                     max: 260,
                       inactiveColor: Color(0xFF8D8E98),
