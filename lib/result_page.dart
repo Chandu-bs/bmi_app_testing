@@ -45,7 +45,7 @@ class ResultsPage extends StatelessWidget {
                         Text(interpretation, textAlign: TextAlign.center,
                         style: kBmiResultText,)
                       ],
-                    ), onPress: (){},
+                    ), onPress: (){}, key: const Key('value'),
                   )
               ),
               GestureDetector(

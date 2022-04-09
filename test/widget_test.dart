@@ -71,14 +71,34 @@ testWidgets(
  );
 
 testWidgets(
+   "check the slider widget",
+   (WidgetTester tester) async {
+  await tester.pumpWidget(MaterialApp(home: InputPage()));
+  
+  await tester.drag(find.byType(Slider), const Offset(120, 0));
+  await tester.pumpAndSettle();
+
+  expect(find.byKey(const Key('SliderKey')), findsOneWidget);
+  
+
+   },
+ );
+
+testWidgets(
    "check the slider widget function",
    (WidgetTester tester) async {
   await tester.pumpWidget(MaterialApp(home: InputPage()));
   
-  await tester.drag(find.byType(Slider), const Offset(260, 0));
-  await tester.pump();
+  await tester.drag(find.byType(Slider), const Offset(120, 0));
+  await tester.pumpAndSettle();
 
-  expect(find.text('260'), findsOneWidget);
+  expect(find.byKey(const Key('SliderKey')), findsOneWidget);
+
+  var slider = find.byKey(const Key('SliderCard'));
+  await tester.tap(slider);
+  await tester.pump();
+  
+  expect(find.text('165'), findsOneWidget);
   
 
    },

@@ -41,7 +41,7 @@ class _InputPageState extends State<InputPage> {
                   });
                 },
                 colour: selectedGender== Gender.male? kActiveCardColor:kInactiveCardColor,
-                cardChild: IconContent(icon: FontAwesomeIcons.male, label:'MALE'),)
+                cardChild: IconContent(icon: FontAwesomeIcons.male, label:'MALE'), key: const Key('GenderM'),)
               ),
               Expanded(child: ReusableCard(
                 onPress: (){
@@ -52,7 +52,7 @@ class _InputPageState extends State<InputPage> {
                   key: const Key('color_change');
                 },
                 colour: selectedGender== Gender.female? kActiveCardColor:kInactiveCardColor,
-                cardChild: IconContent(icon: FontAwesomeIcons.female, label: 'FEMALE',),)
+                cardChild: IconContent(icon: FontAwesomeIcons.female, label: 'FEMALE',), key: const Key('Gender'),)
               ),
             ],
           ),
@@ -92,7 +92,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                 )
               ],
-            ), onPress: (){},
+            ), onPress: (){}, key: const Key('SliderCard'),
           )
           ),
           Expanded(child:
@@ -130,7 +130,7 @@ class _InputPageState extends State<InputPage> {
 
                     )
                   ],
-                ), onPress: (){}
+                ), onPress: (){}, key: const Key('Weight'),
               )
               ),
               Expanded(child: ReusableCard(colour: kActiveCardColor,
@@ -165,7 +165,7 @@ class _InputPageState extends State<InputPage> {
 
                     )
                   ],
-                ), onPress: () {  }, 
+                ), onPress: () {  }, key: const Key('Weight'),
               )
               ),
             ],
