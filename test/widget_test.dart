@@ -107,7 +107,7 @@ testWidgets(
    (WidgetTester tester) async {
   await tester.pumpWidget(MaterialApp(home: InputPage()));
   
-  await tester.drag(find.byType(Slider), const Offset(120, 0));
+  await tester.drag(find.byType(Slider), const Offset(190, 0));
   await tester.pumpAndSettle();
 
   expect(find.byKey(const Key('SliderKey')), findsOneWidget);
@@ -116,26 +116,7 @@ testWidgets(
    },
  );
 
-// testWidgets(
-//    "check the slider widget function",
-//    (WidgetTester tester) async {
-//   await tester.pumpWidget(MaterialApp(home: InputPage()));
-  
-//   await tester.drag(find.byType(Slider), const Offset(120, 0));
-//   await tester.pumpAndSettle();
 
-//   expect(find.byKey(const Key('SliderKey')), findsOneWidget);
-
-//   var slider = find.byKey(const Key('SliderCard'));
-//   // await tester.tap(slider);
- 
-//   await tester.pump();
-  
-//   expect(find.text('165'), findsOneWidget);
-  
-
-//    },
-//  );
 testWidgets(
   "Checking the calculate button",
   (WidgetTester tester) async {
@@ -150,6 +131,45 @@ testWidgets(
 
   },
 );
+
+
+testWidgets(
+   "check the height card",
+   (WidgetTester tester) async {
+  await tester.pumpWidget(MaterialApp(home: InputPage()));
+  
+  await tester.drag(find.byType(Slider), const Offset(190, 0));
+  await tester.pumpAndSettle();
+
+  // expect(find.byKey(const Key('SliderKey')), findsOneWidget);
+
+  find.byKey(const Key('SliderText'));
+  
+  expect(find.text('HEIGHT'), findsOneWidget);
+
+
+   },
+ );
+
+testWidgets(
+   "check the slider value by checking functionality",
+   (WidgetTester tester) async {
+  await tester.pumpWidget(MaterialApp(home: InputPage()));
+  
+  await tester.drag(find.byType(Slider), const Offset(190, 0));
+  await tester.pumpAndSettle();
+
+  // expect(find.byKey(const Key('SliderKey')), findsOneWidget);
+
+  
+
+  
+  expect(find.byKey(const Key('SliderText')), inExclusiveRange(120, 260).toString());
+
+
+   },
+ );
+
 
 }
 

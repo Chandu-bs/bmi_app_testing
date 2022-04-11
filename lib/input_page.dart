@@ -67,7 +67,7 @@ class _InputPageState extends State<InputPage> {
                   textBaseline: TextBaseline.alphabetic,
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   children: [
-                    Text(height.toString(), style: kNumberStyle,),
+                    Text(height.toString(), style: kNumberStyle, key: const Key('SliderText'),),
                     Text('cm', style: kLabelTextStyle,),
                   ],
                 ),
@@ -88,7 +88,7 @@ class _InputPageState extends State<InputPage> {
                     setState(() {
                       height= newValue.round();
                     });
-                      },
+                     key: const Key('ValueT'); },
                   ),
                 )
               ],
